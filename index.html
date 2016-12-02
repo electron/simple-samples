@@ -4,14 +4,22 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="./vendor/bootstrap-3.3.7.css">
+    <link rel="stylesheet" href="./styles.css">
 
     <script>delete module.exports</script>
     <script src="./vendor/jquery-3.1.1.js"></script>
     <script src="./vendor/bootstrap-3.3.7.js"></script>
+    <script src="./vendor/Chart-2.4.0.js"></script>
+    <script src="./window.js"></script>
 
     <title>Activity Monitor</title>
   </head>
   <body>
-    Hello
+    <div id="container" class="container">
+      <h1 class=".align-center">CPU Activity</h1>
+      <div>
+        <canvas class="chart"></canvas>
+      </div>
+    </div>
   </body>
 </html>
