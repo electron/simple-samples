@@ -14,17 +14,13 @@ for (var i = 0; i < cpus.length; i++) {
   var cpuData = {
     data: [
       cpu.times.user,
-      cpu.times.nice,
       cpu.times.sys,
       cpu.times.idle,
-      cpu.times.irq
     ],
     backgroundColor: [
       'rgba(255, 99, 132, 1)',
       'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)'
+      'rgba(255, 206, 86, 1)'
     ]
   }
 
@@ -36,16 +32,18 @@ var chart = new Chart($('.chart'), {
   type: 'doughnut',
   data: {
     labels: [
-      'User',
-      'Nice',
-      'Sys',
-      'Idle',
-      'IRQ'
+      'User Time (ms)',
+      'System Time (ms)',
+      'Idle Time (ms)'
     ],
     datasets: datasets
   },
   options: {
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    title: {
+      display: true,
+      text: 'CPU Activity'
+    }
   }
 })
 

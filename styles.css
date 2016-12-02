@@ -1,3 +1,7 @@
-html, body {
+html, body, .container-fluid {
   height: 100%;
+}
+
+.container-fluid {
+  padding: 25px;
 }
