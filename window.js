@@ -11,8 +11,6 @@ var datasets = []
 for (var i = 0; i < cpus.length; i++) {
   var cpu = cpus[i]
 
-  console.log(cpu);
-
   var cpuData = {
     data: [
       cpu.times.user,
@@ -29,8 +27,6 @@ for (var i = 0; i < cpus.length; i++) {
       'rgba(153, 102, 255, 1)'
     ]
   }
-
-  console.log(cpuData);
 
   // Add cpu data to datasets
   datasets.push(cpuData)
