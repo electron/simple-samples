@@ -3,11 +3,10 @@ $(function () {
 
 var os = require('os') // https://nodejs.org/api/os.html
 
-var cpus = os.cpus()
-
 var datasets = []
 
 // Loop over the CPUs on the current machine
+var cpus = os.cpus()
 for (var i = 0; i < cpus.length; i++) {
   var cpu = cpus[i]
 
@@ -43,12 +42,14 @@ var chart = new Chart($('.chart'), {
     title: {
       display: true,
       text: 'CPU Activity',
-      fontColor: 'rgb(250, 250, 250)'
+      fontColor: 'rgb(250, 250, 250)',
+      fontSize: 16
     },
     legend: {
       display: true,
       labels: {
-        fontColor: 'rgb(250, 250, 250)'
+        fontColor: 'rgb(250, 250, 250)',
+        fontSize: 12
       }
     }
   }
