@@ -42,7 +42,14 @@ var chart = new Chart($('.chart'), {
     maintainAspectRatio: false,
     title: {
       display: true,
-      text: 'CPU Activity'
+      text: 'CPU Activity',
+      fontColor: 'rgb(250, 250, 250)'
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor: 'rgb(250, 250, 250)'
+      }
     }
   }
 })

@@ -8,8 +8,10 @@ var window = null
 electron.app.on('ready', function () {
   // Create a new window
   window = new electron.BrowserWindow({
-    width: 800,
-    height: 600
+    width: 500,
+    height: 400,
+    titleBarStyle: 'hidden-inset',
+    show: false
   })
 
   // Load a URL in the window to the local index.html path
@@ -18,4 +20,9 @@ electron.app.on('ready', function () {
     protocol: 'file:',
     slashes: true
   }))
+
+  // Show window when page is ready
+  window.on('ready-to-show', function () {
+    window.show()
+  })
 })
