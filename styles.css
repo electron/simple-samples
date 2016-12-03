@@ -3,6 +3,10 @@ html, body, .container-fluid {
   background-color: #111;
 }
 
+html {
+  -webkit-app-region: drag;
+}
+
 .container-fluid {
   padding: 25px;
 }
