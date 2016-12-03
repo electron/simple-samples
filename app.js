@@ -11,6 +11,7 @@ electron.app.on('ready', function () {
     width: 500,
     height: 400,
     titleBarStyle: 'hidden-inset',
+    backgroundColor: "#111",
     show: false
   })
 
