@@ -27,6 +27,7 @@ for (var i = 0; i < cpus.length; i++) {
   datasets.push(cpuData)
 }
 
+// Create and render the chart
 var chart = new Chart($('.chart'), {
   type: 'doughnut',
   data: {
