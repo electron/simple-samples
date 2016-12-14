@@ -1,0 +1,10 @@
+html, body, video {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  object-fit: fill; /* Fill the entire screen with the video */
+}

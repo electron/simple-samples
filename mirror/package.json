@@ -1,7 +1,7 @@
 {
-  "name": "activity-monitor",
+  "name": "mirror",
   "version": "1.0.0",
-  "description": "CPU activity monitor",
+  "description": "Like looking into a mirror",
   "main": "app.js",
   "scripts": {
     "start": "electron app.js"
