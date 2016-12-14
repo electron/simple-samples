@@ -22,3 +22,4 @@ Here are some ideas on how it can be improved using other Electron APIs.
 - Add the price of platinum (`PL=F`) to the app.
 - Export prices to a `.csv` file.
 - Show percentage change in price.
+- Show notifications when prices go above/below certain amounts.
