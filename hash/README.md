@@ -3,7 +3,7 @@
 Simple [Electron](http://electron.atom.io) application that shows the hash
 values of entered text using different algorithms.
 
-![screenshot](https://cloud.githubusercontent.com/assets/671378/21198004/6e7a3798-c1f2-11e6-8228-495de90b7797.png)
+![screenshot](https://cloud.githubusercontent.com/assets/671378/21204178/de96fa12-c20a-11e6-8e94-f5b16e676eee.png)
 
 ## Getting started
 
