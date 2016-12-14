@@ -16,7 +16,8 @@ Includes an optional rainbow filter effect that uses CSS animations.
 
 Here are some ideas on how it can be improved using other Electron APIs.
 
-- Add support for saving current image to a `.png` file.
+- Add support for saving current image to a local `.png` file.
 - Support drawing directly on the mirror using the mouse.
 - Add more effect and filter options.
 - Add zooming.
+- Add global keybinding to quickly open it.
