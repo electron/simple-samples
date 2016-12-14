@@ -1,3 +1,5 @@
+// Run this function after the page has loaded
+$(function () {
 
 var stocks = [
   "CL=F", // Crude oil, http://finance.yahoo.com/quote/CL=F?p=CL=F
@@ -7,11 +9,9 @@ var stocks = [
 
 var fields = 'f=pl1' // Requests the current price and previous closing price
 var symbols = 's=' + stocks.join('+')
-var url = 'http://finance.yahoo.com/d/quotes.csv?' + fields + '&' + symbols
+var url = 'https://finance.yahoo.com/d/quotes.csv?' + fields + '&' + symbols
 
-window.fetch(url).then(function (response) {
-  return response.text()
-}).then(function (csv) {
+$.ajax(url).done(function (csv) {
   // Split the output up into an array of lines
   var lines = csv.trim().split('\n')
 
@@ -46,6 +46,8 @@ window.fetch(url).then(function (response) {
       $('#silver-change').text(change)
     }
   }
-}).catch(function (error) {
+}).fail(function (error) {
   console.error(error)
+})
+
 })
