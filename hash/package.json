@@ -1,7 +1,7 @@
 {
   "name": "hash",
   "version": "1.0.0",
-  "description": "See the hash values of values",
+  "description": "See the various hash values of entered text",
   "main": "app.js",
   "scripts": {
     "start": "electron app.js"

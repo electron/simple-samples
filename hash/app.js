@@ -8,10 +8,13 @@ var window = null
 electron.app.once('ready', function () {
   // Create a new window
   window = new electron.BrowserWindow({
-    // Set the initial width to 500px
+    // Set the initial width to 800px
     width: 800,
-    // Set the initial height to 400px
+    // Set the initial height to 600px
     height: 600,
+    // Set the default background color of the window to match the CSS
+    // background color of the page, this prevents any white flickering
+    backgroundColor: "#D6D8DC",
     // Don't show the window until it ready, this prevents any white flickering
     show: false
   })
