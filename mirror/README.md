@@ -1,7 +1,7 @@
 # Mirror
 
 Simple [Electron](http://electron.atom.io) application that plays a video of
-the camera at maximized size.
+the computer's camera at maximized size like a mirror.
 
 ## Getting started
 
@@ -18,4 +18,4 @@ Here are some ideas on how it can be improved using other Electron APIs.
 - Add support for saving current image to a `.png` file.
 - Support drawing directly on the mirror using the mouse.
 - Add image filters.
-- Add zooming
+- Add zooming.
