@@ -6,8 +6,6 @@
   "scripts": {
     "start": "electron app.js"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^1.4.12"

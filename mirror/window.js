@@ -1,3 +1,6 @@
+// Run this function after the page has loaded
+$(function () {
+
 var electron = require('electron')
 
 var display = electron.screen.getPrimaryDisplay()  // http://electron.atom.io/docs/api/screen
@@ -13,6 +16,7 @@ var constraints = {
   }
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
   var video = document.querySelector('video')
   // Play stream in <video> element
@@ -21,13 +25,13 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
   console.error(error)
 })
 
-$(function () {
-  // Listen for the Rainbow Filter checkbox being clicked
-  $("#rainbow-toggle").change(function() {
-    if (this.checked) {
-      $('.rainbow-filter').show()
-    } else {
-      $('.rainbow-filter').hide()
-    }
-  })
+// Listen for the Rainbow Filter checkbox being clicked
+$("#rainbow-toggle").change(function() {
+  if (this.checked) {
+    $('.rainbow-filter').show()
+  } else {
+    $('.rainbow-filter').hide()
+  }
+})
+
 })
