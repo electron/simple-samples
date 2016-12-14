@@ -21,4 +21,5 @@ Here are some ideas on how it can be improved using other Electron APIs.
 - Add tooltips that show times in hours/days instead of milliseconds
 - Support exporting CPU times to a comma-separated (.csv) file
 - Support saving chart as PNG
-- Support printing chart
+- Support copying chart image to clipboard
+- Add second chart of free vs. used memory
