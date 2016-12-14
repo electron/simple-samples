@@ -18,7 +18,7 @@ price of oil, gold, and silver using the Yahoo Finance API.
 Here are some ideas on how it can be improved using other Electron APIs.
 
 - Double-click commodity to open directly on http://finance.yahoo.com
-- Refresh automatically on an interval
+- Refresh automatically on an interval.
 - Add the price of platinum (`PL=F`) to the app.
 - Export prices to a `.csv` file.
 - Show percentage change in price.
