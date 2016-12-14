@@ -20,3 +20,14 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
 }).catch(function (error) {
   console.error(error)
 })
+
+$(function () {
+  // Listen for the Rainbow Filter checkbox being clicked
+  $("#rainbow-toggle").change(function() {
+    if (this.checked) {
+      $('.rainbow-filter').show()
+    } else {
+      $('.rainbow-filter').hide()
+    }
+  })
+})
