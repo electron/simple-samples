@@ -1,6 +1,6 @@
-var screen = require('electron').screen // http://electron.atom.io/docs/api/screen
+var electron = require('electron')
 
-var display = screen.getPrimaryDisplay() // http://electron.atom.io/docs/api/structures/display
+var display = electron.screen.getPrimaryDisplay()  // http://electron.atom.io/docs/api/screen
 
 var constraints = {
   video: {
