@@ -23,11 +23,12 @@ video {
   right: 0;
   top: 0;
   bottom: 0;
-  animation: 3s linear 0s infinite alternate rainbow_background;
-  opacity: .3;
   display: none;
+  opacity: .3;
+  animation: 3s linear 0s infinite alternate rainbow_background;
 }
 
+/* Animate from red to green to blue */
 @keyframes rainbow_background {
   0% {
     background: #f00;
