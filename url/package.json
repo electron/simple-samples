@@ -1,0 +1,13 @@
+{
+  "name": "Url",
+  "version": "1.0.0",
+  "description": "Load a URL in an Electron window",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.4.12"
+  }
+}
