@@ -12,7 +12,7 @@ electron.app.once('ready', function () {
     height: 600,
     // Don't show the window until it ready, this prevents any white flickering
     show: false,
-    webPrefences: {
+    webPreferences: {
       // Disable node integration in remote page
       nodeIntegration: false
     }
