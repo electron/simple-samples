@@ -2,6 +2,7 @@
   "name": "Url",
   "version": "1.0.0",
   "description": "Load a URL in an Electron window",
+  "repository": "kevinsawicki/electron-samples",
   "main": "app.js",
   "scripts": {
     "start": "electron app.js"

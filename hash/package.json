@@ -2,6 +2,7 @@
   "name": "hash",
   "version": "1.0.0",
   "description": "See the various hash values of entered text",
+  "repository": "kevinsawicki/electron-samples",
   "main": "app.js",
   "scripts": {
     "start": "electron app.js"
