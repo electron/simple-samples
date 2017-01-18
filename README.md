@@ -9,7 +9,7 @@ Each folder contains a different app with the `README.md` in that folder
 explaining what it does, how to run it, and how it could be improved.
 
 ```sh
-git clone https://github.com/kevinsawicki/electron-samples
+git clone https://github.com/electron/simple-samples
 ```
 
 ## Links
