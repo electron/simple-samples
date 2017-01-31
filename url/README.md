@@ -7,6 +7,6 @@ passed on the command line in a window.
 
 - Install [Node LTS](https://nodejs.org)
 - Clone this repository
-- `cd price`
+- `cd url`
 - `npm install` to install the application's dependencies
 - `npm start https://github.com` to start the application and load GitHub
