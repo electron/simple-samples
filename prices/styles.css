@@ -21,6 +21,12 @@ html, body, .container-fluid {
   height: 33.33333333%;
 }
 
+.row > div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .price {
   padding-right: 5px;
 }
