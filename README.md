@@ -25,7 +25,7 @@ This repository is meant as a tool for learning Electron by taking an
 existing application further by using additional Electron APIs.
 
 It is intended for people who are not only new to Electron but
-somewhat new to web development as well. We that in mind, we used approachable
+somewhat new to web development as well. With that in mind, we used approachable
 tools like jQuery and Bootstrap to keep the barrier to entry as low as
 possible.
 
