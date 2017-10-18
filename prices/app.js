@@ -1,13 +1,13 @@
-var electron = require('electron') // http://electron.atom.io/docs/api
-var path = require('path')         // https://nodejs.org/api/path.html
-var url = require('url')           // https://nodejs.org/api/url.html
+const {app, BrowserWindow} = require('electron') // http://electron.atom.io/docs/api
+const path = require('path')         // https://nodejs.org/api/path.html
+const url = require('url')           // https://nodejs.org/api/url.html
 
-var window = null
+let window = null
 
 // Wait until the app is ready
-electron.app.once('ready', function () {
+app.once('ready', function() {
   // Create a new window
-  window = new electron.BrowserWindow({
+  window = new BrowserWindow({
     // Set the initial width to 400px
     width: 400,
     // Set the initial height to 500px
@@ -26,7 +26,7 @@ electron.app.once('ready', function () {
   }))
 
   // Show window when page is ready
-  window.once('ready-to-show', function () {
+  window.once('ready-to-show', function() {
     window.show()
   })
 })

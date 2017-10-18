@@ -1,16 +1,14 @@
-// Run this function after the page has loaded
 $(function () {
 
-var os = require('os') // https://nodejs.org/api/os.html
+const os = require('os')
 
-var datasets = []
+const datasets = []
+const cpus = os.cpus()
 
-// Loop over the CPUs on the current machine
-var cpus = os.cpus()
-for (var i = 0; i < cpus.length; i++) {
-  var cpu = cpus[i]
+for (let i = 0; i < cpus.length; i++) {
+  const cpu = cpus[i]
 
-  var cpuData = {
+  const cpuData = {
     data: [
       cpu.times.user,
       cpu.times.sys,
@@ -22,12 +20,9 @@ for (var i = 0; i < cpus.length; i++) {
       'rgba(255, 206, 86, 1)'
     ]
   }
-
-  // Add cpu data to datasets
   datasets.push(cpuData)
 }
 
-// Create and render the chart
 var chart = new Chart($('.chart'), {
   type: 'doughnut',
   data: {
