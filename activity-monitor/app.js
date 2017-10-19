@@ -5,7 +5,7 @@ const url = require('url')
 let window = null
 
 // Wait until the app is ready
-app.once('ready', function() {
+app.once('ready', () => {
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 500px
@@ -26,7 +26,7 @@ app.once('ready', function() {
     slashes: true
   }))
 
-  window.once('ready-to-show', function() {
+  window.once('ready-to-show', () => {
     window.show()
   })
 })
