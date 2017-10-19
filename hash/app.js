@@ -1,13 +1,13 @@
-var electron = require('electron') // http://electron.atom.io/docs/api
-var path = require('path')         // https://nodejs.org/api/path.html
-var url = require('url')           // https://nodejs.org/api/url.html
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
+const url = require('url')
 
-var window = null
+let window = null
 
 // Wait until the app is ready
-electron.app.once('ready', function () {
+app.once('ready', () => {
   // Create a new window
-  window = new electron.BrowserWindow({
+  window = new BrowserWindow({
     // Set the initial width to 800px
     width: 800,
     // Set the initial height to 600px
@@ -15,7 +15,7 @@ electron.app.once('ready', function () {
     // Set the default background color of the window to match the CSS
     // background color of the page, this prevents any white flickering
     backgroundColor: "#D6D8DC",
-    // Don't show the window until it ready, this prevents any white flickering
+    // Don't show the window until it's ready, this prevents any white flickering
     show: false
   })
 
@@ -27,7 +27,7 @@ electron.app.once('ready', function () {
   }))
 
   // Show window when page is ready
-  window.once('ready-to-show', function () {
+  window.once('ready-to-show', () => {
     window.show()
   })
 })

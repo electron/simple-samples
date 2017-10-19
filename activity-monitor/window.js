@@ -1,59 +1,53 @@
-// Run this function after the page has loaded
-$(function () {
+$(() => {
+  const os = require('os')
 
-var os = require('os') // https://nodejs.org/api/os.html
+  const datasets = []
+  const cpus = os.cpus()
 
-var datasets = []
+  for (let i = 0; i < cpus.length; i++) {
+    const cpu = cpus[i]
 
-// Loop over the CPUs on the current machine
-var cpus = os.cpus()
-for (var i = 0; i < cpus.length; i++) {
-  var cpu = cpus[i]
-
-  var cpuData = {
-    data: [
-      cpu.times.user,
-      cpu.times.sys,
-      cpu.times.idle,
-    ],
-    backgroundColor: [
-      'rgba(255, 99, 132, 1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)'
-    ]
+    const cpuData = {
+      data: [
+        cpu.times.user,
+        cpu.times.sys,
+        cpu.times.idle,
+      ],
+      backgroundColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)'
+      ]
+    }
+    datasets.push(cpuData)
   }
 
-  // Add cpu data to datasets
-  datasets.push(cpuData)
-}
-
-// Create and render the chart
-var chart = new Chart($('.chart'), {
-  type: 'doughnut',
-  data: {
-    labels: [
-      'User Time (ms)',
-      'System Time (ms)',
-      'Idle Time (ms)'
-    ],
-    datasets: datasets
-  },
-  options: {
-    maintainAspectRatio: false,
-    title: {
-      display: true,
-      text: 'CPU Activity',
-      fontColor: 'rgb(250, 250, 250)',
-      fontSize: 16
+  var chart = new Chart($('.chart'), {
+    type: 'doughnut',
+    data: {
+      labels: [
+        'User Time (ms)',
+        'System Time (ms)',
+        'Idle Time (ms)'
+      ],
+      datasets: datasets
     },
-    legend: {
-      display: true,
-      labels: {
+    options: {
+      maintainAspectRatio: false,
+      title: {
+        display: true,
+        text: 'CPU Activity',
         fontColor: 'rgb(250, 250, 250)',
-        fontSize: 12
+        fontSize: 16
+      },
+      legend: {
+        display: true,
+        labels: {
+          fontColor: 'rgb(250, 250, 250)',
+          fontSize: 12
+        }
       }
     }
-  }
-})
+  })
 
 })
