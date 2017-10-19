@@ -1,11 +1,11 @@
-var electron = require('electron') // http://electron.atom.io/docs/api
+const {app, BrowserWindow} = require('electron') // http://electron.atom.io/docs/api
 
-var window = null
+let window = null
 
 // Wait until the app is ready
-electron.app.once('ready', function () {
+app.once('ready', function () {
   // Create a new window
-  window = new electron.BrowserWindow({
+  window = new BrowserWindow({
     // Set the initial width to 800px
     width: 800,
     // Set the initial height to 600px
@@ -19,7 +19,7 @@ electron.app.once('ready', function () {
   })
 
   // URL is argument to npm start
-  var url = process.argv[2]
+  const url = process.argv[2]
   window.loadURL(url)
 
   // Show window when page is ready

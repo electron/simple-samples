@@ -5,7 +5,7 @@ const url = require('url')
 let window = null
 
 // Wait until the app is ready
-app.once('ready', function() {
+app.once('ready', function () {
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 800px

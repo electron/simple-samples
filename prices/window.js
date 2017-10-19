@@ -1,7 +1,7 @@
 // Run this function after the page has loaded
 $(function () {
 
-var stocks = [
+stocks = [
   "CL=F", // Crude oil, http://finance.yahoo.com/quote/CL=F?p=CL=F
   "GC=F", // Gold, https://finance.yahoo.com/quote/GC=F?p=GC=F
   "SI=F"  // Silver, https://finance.yahoo.com/quote/SI=F?p=SI=F
