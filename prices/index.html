@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
 
-    <title>Current Prices</title>
+<head>
+  <meta charset="utf-8">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles.css">
+  <title>Current Prices</title>
 
-    <!-- Scripts -->
-    <script>delete module.exports</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="./window.js" charset="utf-8"></script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles.css">
 
-  </head>
-  <body>
-    <div id="container" class="container-fluid">
+  <!-- Scripts -->
+  <script>
+    delete module.exports
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="./window.js" charset="utf-8"></script>
 
-      <!-- Oil Row -->
-      <div class="row oil">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-          <h1>Oil <small>per barrel</small></h1>
-          <h2>
+</head>
+
+<body>
+  <div id="container" class="container-fluid">
+
+    <!-- Oil Row -->
+    <div class="row oil">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <h1>Oil <small>per barrel</small></h1>
+        <h2>
             <span id="oil-price" class="price"></span>
             <small id="oil-change" class="change"></small>
           </h2>
-        </div>
       </div>
+    </div>
 
-      <!-- Gold Row -->
-      <div class="row gold">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h1>Gold <small>per ounce</small></h1>
-          <h2>
+    <!-- Gold Row -->
+    <div class="row gold">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>Gold <small>per ounce</small></h1>
+        <h2>
             <span id="gold-price" class="price"></span>
             <small id="gold-change" class="change"></small>
           </h2>
-        </div>
       </div>
+    </div>
 
-      <!-- Silver Row -->
-      <div class="row silver">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h1 class="silver">Silver <small>per ounce</small></h1>
-          <h2>
+    <!-- Silver Row -->
+    <div class="row silver">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="silver">Silver <small>per ounce</small></h1>
+        <h2>
             <span id="silver-price" class="price"></span>
             <small id="silver-change" class="change"></small>
           </h2>
-        </div>
       </div>
-
     </div>
-  </body>
+
+  </div>
+</body>
+
 </html>
