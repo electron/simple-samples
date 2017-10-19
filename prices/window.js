@@ -9,6 +9,7 @@ $(function() {
 
   const fields = 'f=pl1' // Requests the current price and previous closing price
   const symbols = `s=${stocks.join('+')}`
+  console.log(symbols)
   const url = `https://finance.yahoo.com/d/quotes.csv?${fields}&${symbols}`
 
   $.ajax(url).done((csv) => {
@@ -27,11 +28,11 @@ $(function() {
       const currentPrice = parseFloat(prices[1], 10)
 
       // Change between closing price and current price rounded to 2 decimal points.
-      cons change = Math.round((currentPrice - previousPrice) * 100) / 100
+      let change = Math.round((currentPrice - previousPrice) * 100) / 100
 
       // Add a leading + for positive change
       if (change >= 0) {
-        change = '+' + change
+        change = `+${change}`
       }
 
       // Add prices and changes to HTML element
@@ -49,5 +50,4 @@ $(function() {
   }).fail((error) => {
     console.error(error)
   })
-
 })
