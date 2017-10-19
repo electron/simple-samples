@@ -1,4 +1,4 @@
-$(function() {
+$(() => {
   const os = require('os')
 
   const datasets = []

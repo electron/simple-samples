@@ -5,7 +5,7 @@ const url = require('url')
 let window = null
 
 // Wait until the app is ready
-app.once('ready', function () {
+app.once('ready', () => {
   // Create a new window
   window = new BrowserWindow({
     // Don't show the window until it ready, this prevents any white flickering
@@ -24,7 +24,7 @@ app.once('ready', function () {
   }))
 
   // Show window when page is ready
-  window.once('ready-to-show', function () {
+  window.once('ready-to-show', () => {
     window.maximize()
     window.show()
   })

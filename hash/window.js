@@ -1,8 +1,7 @@
-// Run this function after the page has loaded
-$(function() {
+$(() => {
   const crypto = require('crypto')
 
-  $('#text-input').bind('input propertychange', function() {
+  $('#text-input').bind('input propertychange', () => {
     const text = this.value
 
     const md5 = crypto.createHash('md5').update(text, 'utf8').digest('hex')

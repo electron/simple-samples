@@ -1,5 +1,5 @@
 // Run this function after the page has loaded
-$(function() {
+$(() => {
 
   stocks = [
     'CL=F', // Crude oil, http://finance.yahoo.com/quote/CL=F?p=CL=F

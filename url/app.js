@@ -3,7 +3,7 @@ const {app, BrowserWindow} = require('electron') // http://electron.atom.io/docs
 let window = null
 
 // Wait until the app is ready
-app.once('ready', function () {
+app.once('ready', () => {
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 800px
@@ -23,7 +23,7 @@ app.once('ready', function () {
   window.loadURL(url)
 
   // Show window when page is ready
-  window.once('ready-to-show', function () {
+  window.once('ready-to-show', () => {
     window.maximize()
     window.show()
   })

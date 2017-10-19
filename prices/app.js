@@ -5,7 +5,7 @@ const url = require('url')           // https://nodejs.org/api/url.html
 let window = null
 
 // Wait until the app is ready
-app.once('ready', function () {
+app.once('ready', () => {
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 400px
@@ -26,7 +26,7 @@ app.once('ready', function () {
   }))
 
   // Show window when page is ready
-  window.once('ready-to-show', function () {
+  window.once('ready-to-show', () => {
     window.show()
   })
 })

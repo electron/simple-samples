@@ -1,11 +1,11 @@
-const {app, BrowserWindow} electron = require('electron')
+const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
 let window = null
 
 // Wait until the app is ready
-app.once('ready', function () {
+app.once('ready', () => {
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 800px
@@ -27,7 +27,7 @@ app.once('ready', function () {
   }))
 
   // Show window when page is ready
-  window.once('ready-to-show', function() {
+  window.once('ready-to-show', () => {
     window.show()
   })
 })
