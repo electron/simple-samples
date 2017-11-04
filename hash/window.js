@@ -1,7 +1,7 @@
 $(() => {
   const crypto = require('crypto')
 
-  $('#text-input').bind('input propertychange', () => {
+  $('#text-input').bind('input propertychange', function() {
     const text = this.value
 
     const md5 = crypto.createHash('md5').update(text, 'utf8').digest('hex')
