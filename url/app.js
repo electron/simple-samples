@@ -2,8 +2,7 @@ const {app, BrowserWindow} = require('electron') // http://electron.atom.io/docs
 
 let window = null
 
-// Wait until the app is ready
-app.once('ready', () => {
+function createWindow(){
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 800px
@@ -19,12 +18,32 @@ app.once('ready', () => {
   })
 
   // URL is argument to npm start
-  const url = process.argv[2]
+  const url = process.argv[2] || 'https://electronjs.org/';
   window.loadURL(url)
+
+  window.on('closed',()=>{
+    window = null;
+  })
 
   // Show window when page is ready
   window.once('ready-to-show', () => {
     window.maximize()
     window.show()
   })
+  
+}
+
+// Wait until the app is ready
+app.once('ready',createWindow)
+
+//for mac os
+app.on('window-all-closed',()=>{
+  if(process.platform != 'darwin'){
+    app.quit();
+  }
+})
+app.on('activate',()=>{
+  if(window == null){
+    createWindow();
+  }
 })

@@ -4,8 +4,7 @@ const url = require('url')           // https://nodejs.org/api/url.html
 
 let window = null
 
-// Wait until the app is ready
-app.once('ready', () => {
+function createWindow(){
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 400px
@@ -25,8 +24,27 @@ app.once('ready', () => {
     slashes: true
   }))
 
+  window.on('closed',()=>{
+    window = null;
+  })
+
   // Show window when page is ready
   window.once('ready-to-show', () => {
     window.show()
   })
+}
+
+// Wait until the app is ready
+app.once('ready',createWindow)
+
+//for mac os
+app.on('window-all-closed',()=>{
+  if(process.platform != 'darwin'){
+    app.quit();
+  }
+})
+app.on('activate',()=>{
+  if(window == null){
+    createWindow();
+  }
 })

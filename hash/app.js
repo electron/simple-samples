@@ -4,8 +4,7 @@ const url = require('url')
 
 let window = null
 
-// Wait until the app is ready
-app.once('ready', () => {
+function createWindow(){
   // Create a new window
   window = new BrowserWindow({
     // Set the initial width to 800px
@@ -16,7 +15,9 @@ app.once('ready', () => {
     // background color of the page, this prevents any white flickering
     backgroundColor: "#D6D8DC",
     // Don't show the window until it's ready, this prevents any white flickering
-    show: false
+    show: false,
+    //disable resize
+    resizable: false
   })
 
   // Load a URL in the window to the local index.html path
@@ -26,8 +27,27 @@ app.once('ready', () => {
     slashes: true
   }))
 
+  window.on('closed',()=>{
+    window = null;
+  })
+
   // Show window when page is ready
   window.once('ready-to-show', () => {
     window.show()
   })
+}
+
+// Wait until the app is ready
+app.once('ready',createWindow);
+
+//for mac os
+app.on('window-all-closed',()=>{
+  if(process.platform != 'darwin'){
+    app.quit();
+  }
+})
+app.on('activate',()=>{
+  if(window == null){
+    createWindow();
+  }
 })
