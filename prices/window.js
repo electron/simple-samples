@@ -20,7 +20,7 @@ $(() => {
         // price data is the second array, first is headers
         const prices = results.data[1]
         const previousPrice = parseFloat(prices[3], 10)
-        const currentPrice = parseFloat(prices[6], 10) //
+        const currentPrice = parseFloat(prices[6], 10)
         let change = Math.round((currentPrice - previousPrice) * 100) / 100
 
         if (change >= 0) {
