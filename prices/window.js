@@ -1,54 +1,35 @@
 /* global $ */
+const csv = require('papaparse')
 
 // Run this function after the page has loaded
 $(() => {
-  const stocks = [
-    'CL=F', // Crude oil, http://finance.yahoo.com/quote/CL=F?p=CL=F
-    'GC=F', // Gold, https://finance.yahoo.com/quote/GC=F?p=GC=F
-    'SI=F' // Silver, https://finance.yahoo.com/quote/SI=F?p=SI=F
-  ]
+  let url
+  const stocks = {
+    'oil': 'CL.F', // Crude oil, https://stooq.com/q/?s=cl.f
+    'gold': 'GC.F', // Gold, https://stooq.com/q/?s=gc.f
+    'silver': 'SI.F' // Silver,https://stooq.com/q/?s=si.f
+  }
 
-  const fields = 'f=pl1' // Requests the current price and previous closing price
-  const symbols = `s=${stocks.join('+')}`
+  for (let symbol in stocks) {
+    url = `https://stooq.com/q/l/?s=${stocks[symbol]}&f=sd2t2ohlc&h&e=csv`
 
-  const url = `https://finance.yahoo.com/d/quotes.csv?${fields}&${symbols}`
+    csv.parse(url, {
+      download: true,
+      delimiter: ',',
+      complete: (results) => {
+        // price data is the second array, first is headers
+        const prices = results.data[1]
+        const previousPrice = parseFloat(prices[3], 10)
+        const currentPrice = parseFloat(prices[6], 10) //
+        let change = Math.round((currentPrice - previousPrice) * 100) / 100
 
-  $.ajax(url).done((csv) => {
-    // Split the output up into an array of lines
-    const lines = csv.trim().split('\n')
+        if (change >= 0) {
+          change = `+${change}`
+        }
 
-    // Iterate over each line
-    for (let i = 0; i < lines.length; i++) {
-      // Split the line up by comma
-      const prices = lines[i].split(',')
-
-      // Previous closing price of stock symbol
-      const previousPrice = parseFloat(prices[0], 10)
-
-      // Current price of stock symbol
-      const currentPrice = parseFloat(prices[1], 10)
-
-      // Change between closing price and current price rounded to 2 decimal points.
-      let change = Math.round((currentPrice - previousPrice) * 100) / 100
-
-      // Add a leading + for positive change
-      if (change >= 0) {
-        change = `+${change}`
+        $(`#${symbol}-price`).text(currentPrice.toLocaleString())
+        $(`#${symbol}-change`).text(change)
       }
-
-      // Add prices and changes to HTML element
-      if (i === 0) { // Oil
-        $('#oil-price').text(currentPrice.toLocaleString())
-        $('#oil-change').text(change)
-      } else if (i === 1) { // Gold
-        $('#gold-price').text(currentPrice.toLocaleString())
-        $('#gold-change').text(change)
-      } else if (i === 2) { // Silver
-        $('#silver-price').text(currentPrice.toLocaleString())
-        $('#silver-change').text(change)
-      }
-    }
-  }).fail((error) => {
-    console.error(error)
-  })
+    })
+  }
 })

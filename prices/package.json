@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^1.4.12"
+  },
+  "dependencies": {
+    "papaparse": "^4.3.7"
   }
 }
