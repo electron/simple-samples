@@ -1,7 +1,7 @@
 # Prices
 
-Simple [Electron](http://electron.atom.io) application that shows the current
-price of oil, gold, and silver using the Yahoo Finance API.
+Simple [Electron](http://electronjs.org) application that shows the current
+price of oil, gold, and silver using the STOOQ API.
 
 ![screenshot](https://cloud.githubusercontent.com/assets/671378/21198004/6e7a3798-c1f2-11e6-8228-495de90b7797.png)
 
@@ -9,7 +9,7 @@ price of oil, gold, and silver using the Yahoo Finance API.
 
 - Install [Node LTS](https://nodejs.org)
 - Clone this repository
-- `cd price`
+- `cd prices`
 - `npm install` to install the application's dependencies
 - `npm start` to start the application
 
@@ -17,7 +17,7 @@ price of oil, gold, and silver using the Yahoo Finance API.
 
 Here are some ideas on how it can be improved using other Electron APIs.
 
-- Double-click commodity to open directly on http://finance.yahoo.com
+- Double-click commodity to open directly on https://stooq.com
 - Refresh automatically on an interval.
 - Add the price of platinum (`PL=F`) to the app.
 - Export prices to a `.csv` file.

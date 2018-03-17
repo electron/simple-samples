@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron') // http://electron.atom.io/docs/api
+const {app, BrowserWindow} = require('electron') // http://electronjs.org/docs/api
 const path = require('path') // https://nodejs.org/api/path.html
 const url = require('url') // https://nodejs.org/api/url.html
 
