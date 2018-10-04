@@ -13,7 +13,7 @@ app.once('ready', () => {
     // Set the initial height to 400px
     height: 400,
     // set the title bar style
-    titleBarStyle: 'hidden-inset',
+    titleBarStyle: 'hiddenInset',
     // set the background color to black
     backgroundColor: "#111",
     // Don't show the window until it's ready, this prevents any white flickering
