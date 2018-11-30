@@ -8,6 +8,8 @@ html, body, video {
 
 video {
   object-fit: fill; /* Fill the entire screen with the video */
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .filter {
