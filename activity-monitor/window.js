@@ -1,5 +1,6 @@
 const os = require('os')
 var chart = null;
+var memoryChart = null;
 var lastMeasureTimes = [];
 
 function setLastMeasureTimes(cpus) {
@@ -28,6 +29,20 @@ function getDatasets() {
   return datasets;
 }
 
+function getMemoryDataSets() {
+  const datasets = []
+  const memData = {
+    data: getMemoryStatus(),
+    backgroundColor: [
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)'
+      // 'rgba(255, 206, 86, 1)'
+    ]
+  }
+  datasets.push(memData)
+  return datasets
+}
+
 function updateDatasets() {
   const cpus = os.cpus()
   for (let i = 0; i < cpus.length; i++) {
@@ -41,6 +56,11 @@ function updateDatasets() {
   setLastMeasureTimes(cpus);
 }
 
+function updateMemoryDatasets() {
+  memoryChart.data.datasets[0].data = getMemoryStatus()
+  memoryChart.update()
+}
+
 function getCpuTimes(cpu) {
   return [
     cpu.times.user,
@@ -49,8 +69,15 @@ function getCpuTimes(cpu) {
   ];
 }
 
+function getMemoryStatus() {
+  return [
+    os.totalmem() - os.freemem(),
+    os.freemem()
+  ]
+}
+
 function drawChart() {
-  chart = new Chart($('.chart'), {
+  chart = new Chart($('.cpuChart'), {
     type: 'doughnut',
     data: {
       labels: [
@@ -78,7 +105,35 @@ function drawChart() {
     }
   });
 
+  memoryChart = new Chart($('.memChart'), {
+    type: 'doughnut',
+    data: {
+      labels: [
+        'Used Memory',
+        'Free Memory'
+      ],
+      datasets: getMemoryDataSets()
+    },
+    options: {
+      maintainAspectRatio: false,
+      title: {
+        display: true,
+        text: "Memory Useage",
+        fontColor: 'rgb(250, 250, 250)',
+        fontSize: 12
+      }
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor: 'rgb(250, 250, 250)',
+        fontSize: 12
+      }
+    }
+  });
+
   setInterval(updateDatasets, 1000);
+  setInterval(updateMemoryDatasets, 1000);
 }
 
 $(() => {

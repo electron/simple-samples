@@ -1,4 +1,5 @@
-html, body, .container-fluid {
+/* not sure why, but we have to manually tell the row and column to set height here */
+html, body, .container-fluid, .row, .col-xs-6 {
   height: 100%;
   background-color: #111;
 }
