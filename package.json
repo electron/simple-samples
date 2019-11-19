@@ -6,6 +6,15 @@
     "start": "electron app.js"
   },
   "license": "ISC",
+  "build": {
+    "productName": "Example",
+    "appId": "app.example",
+    "afterSign": "./notarize",
+    "publish": {
+      "provider": "github",
+      "releaseType": "draft"
+    }
+  },
   "devDependencies": {
     "electron": "^3.0.2",
     "electron-builder": "^21.2.0",
