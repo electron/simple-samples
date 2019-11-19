@@ -7,6 +7,8 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "electron": "^3.0.2"
+    "electron": "^3.0.2",
+    "electron-builder": "^21.2.0",
+    "electron-notarize": "^0.2.0"
   }
 }
