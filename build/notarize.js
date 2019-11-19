@@ -15,7 +15,7 @@ const appBundleId = config.build.appId
 
 exports.default = async () => {
   // appleId, appleIdPasswordが取得できない場合はスキップ
-  // ブランチがmasterでない場合はスキップ。例えばプルリクエストのブランチなど
+  // 現在のブランチがmasterでない場合はスキップ。例えばプルリクエストのブランチなど
   if (!appleId || !appleIdPassword || process.env.BRANCH !== 'master') {
     console.warn('notarize skipped');
     return;
