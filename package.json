@@ -9,7 +9,7 @@
   "build": {
     "productName": "Example",
     "appId": "app.example",
-    "afterSign": "./notarize",
+    "afterSign": "./build/notarize",
     "publish": {
       "provider": "github",
       "releaseType": "draft"
