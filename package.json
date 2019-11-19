@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "build": "electron-builder",
     "start": "electron app.js"
   },
   "license": "ISC",
