@@ -13,7 +13,11 @@ app.once('ready', () => {
     // Make the window transparent
     transparent: true,
     // Remove the frame from the window
-    frame: false
+    frame: false,
+    // Set nodeIntegration true //default false
+    webPreferences:{
+      nodeIntegration:true
+    }
   })
 
   // Load a URL in the window to the local index.html path
