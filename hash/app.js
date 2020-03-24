@@ -16,7 +16,11 @@ app.once('ready', () => {
     // background color of the page, this prevents any white flickering
     backgroundColor: "#D6D8DC",
     // Don't show the window until it's ready, this prevents any white flickering
-    show: false
+    show: false,
+    // Set nodeIntegration true //default false
+    webPreferences:{
+      nodeIntegration:true
+    }
   })
 
   // Load a URL in the window to the local index.html path

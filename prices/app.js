@@ -15,7 +15,11 @@ app.once('ready', () => {
     // Don't show the window until it ready, this prevents any white flickering
     show: false,
     // Don't allow the window to be resized.
-    resizable: false
+    resizable: false,
+    // Set nodeIntegration true //default false
+    webPreferences:{
+      nodeIntegration:true
+    }
   })
 
   // Load a URL in the window to the local index.html path

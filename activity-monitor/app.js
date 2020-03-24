@@ -17,7 +17,11 @@ app.once('ready', () => {
     // set the background color to black
     backgroundColor: "#111",
     // Don't show the window until it's ready, this prevents any white flickering
-    show: false
+    show: false,
+    // Set nodeIntegration true //default false
+    webPreferences:{
+      nodeIntegration:true
+    }
   })
 
   window.loadURL(url.format({
