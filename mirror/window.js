@@ -1,8 +1,11 @@
 // Run this function after the page has loaded
 $(() => {
-  const electron = require('electron')
+  const {remote} = require('electron')
+  
+  // get screen through remote module
+  const {screen}=remote
 
-  const display = electron.screen.getPrimaryDisplay() // http://electron.atom.io/docs/api/screen
+  const display = screen.getPrimaryDisplay() // http://electron.atom.io/docs/api/screen
 
   const constraints = {
     video: {
